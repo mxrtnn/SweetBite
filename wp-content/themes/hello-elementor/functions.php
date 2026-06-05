@@ -293,8 +293,8 @@ function renderizar_landing_sweetbite() {
             --text-dark: #2C2623;
             --text-muted: #6E6661;
             --white: #FFFFFF;
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --font-heading: 'Playfair Display', serif !important;
+            --font-body: 'Plus Jakarta Sans', sans-serif !important;
         }
 
         /* --- ESTILOS GENERALES --- */
@@ -305,6 +305,10 @@ function renderizar_landing_sweetbite() {
             line-height: 1.6;
         }
 
+        .sweetbite-body h1, .sweetbite-body h2, .sweetbite-body h3, .sweetbite-body .logo, .sweetbite-body .section-title {
+            font-family: var(--font-heading);
+        }
+
         .sweetbite-body a {
             text-decoration: none;
             color: inherit;
@@ -312,6 +316,8 @@ function renderizar_landing_sweetbite() {
 
         .sweetbite-body ul {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
         .sweetbite-body img {
@@ -343,13 +349,14 @@ function renderizar_landing_sweetbite() {
 
         .sweetbite-body .btn-primary:hover {
             background-color: var(--accent-red);
+            color: var(--white);
         }
 
         .sweetbite-body .btn-quick-add {
             width: 100%;
             background-color: var(--primary-dark);
             color: var(--white);
-            padding: 10px;
+            padding: 12px;
             border: none;
             border-radius: 4px;
             font-weight: 600;
@@ -359,11 +366,12 @@ function renderizar_landing_sweetbite() {
             align-items: center;
             justify-content: center;
             gap: 8px;
-            transition: opacity 0.3s;
+            transition: background-color 0.3s;
+            margin-top: auto;
         }
 
         .sweetbite-body .btn-quick-add:hover {
-            opacity: 0.9;
+            background-color: var(--accent-red);
         }
 
         /* --- HEADER / NAV --- */
@@ -383,7 +391,6 @@ function renderizar_landing_sweetbite() {
         }
 
         .sweetbite-body .logo {
-            font-family: var(--font-heading);
             font-size: 24px;
             font-weight: 700;
             color: var(--primary-dark);
@@ -427,7 +434,6 @@ function renderizar_landing_sweetbite() {
         }
 
         .sweetbite-body .hero-content h1 {
-            font-family: var(--font-heading);
             font-size: 48px;
             color: var(--primary-dark);
             line-height: 1.2;
@@ -472,9 +478,9 @@ function renderizar_landing_sweetbite() {
         }
 
         .sweetbite-body .section-title {
-            font-family: var(--font-heading);
             font-size: 32px;
             color: var(--primary-dark);
+            margin: 0;
         }
 
         .sweetbite-body .see-all-link {
@@ -485,20 +491,20 @@ function renderizar_landing_sweetbite() {
             padding-bottom: 4px;
         }
 
-        .sweetbite-body .product-grid-3 {
+        .sweetbite-body .product-grid-3, .sweetbite-body .product-grid-catalog {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
 
         .sweetbite-body .product-card {
-            background-color: var(--bg-cream);
+            background-color: var(--white);
             border-radius: 12px;
-            padding: 16px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
         }
 
         .sweetbite-body .product-img-wrapper {
@@ -530,6 +536,7 @@ function renderizar_landing_sweetbite() {
             font-size: 11px;
             font-weight: 600;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            z-index: 10;
         }
 
         .sweetbite-body .badge.pink { background-color: #FCE4E6; color: #731A24;}
@@ -551,6 +558,12 @@ function renderizar_landing_sweetbite() {
             color: var(--text-muted);
             cursor: pointer;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            z-index: 10;
+            transition: color 0.3s;
+        }
+        
+        .sweetbite-body .heart-icon:hover {
+            color: var(--accent-red);
         }
 
         .sweetbite-body .product-info-meta {
@@ -561,21 +574,22 @@ function renderizar_landing_sweetbite() {
         }
 
         .sweetbite-body .product-title {
-            font-family: var(--font-heading);
             font-size: 18px;
             color: var(--primary-dark);
+            margin: 0;
+            font-weight: 700;
         }
 
         .sweetbite-body .product-price {
             font-weight: 700;
-            font-size: 14px;
+            font-size: 16px;
             color: var(--accent-red);
         }
 
         .sweetbite-body .product-desc {
             font-size: 13px;
             color: var(--text-muted);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             min-height: 40px;
         }
 
@@ -584,7 +598,7 @@ function renderizar_landing_sweetbite() {
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
         /* --- SECCIÓN CALIDAD --- */
@@ -615,7 +629,6 @@ function renderizar_landing_sweetbite() {
         }
 
         .sweetbite-body .quality-content h2 {
-            font-family: var(--font-heading);
             font-size: 36px;
             color: var(--primary-dark);
             margin-bottom: 20px;
@@ -655,7 +668,6 @@ function renderizar_landing_sweetbite() {
         }
 
         .sweetbite-body .collection-intro h2 {
-            font-family: var(--font-heading);
             font-size: 40px;
             color: var(--primary-dark);
             margin-bottom: 16px;
@@ -725,18 +737,12 @@ function renderizar_landing_sweetbite() {
             outline: none;
         }
 
-        .sweetbite-body .product-grid-catalog {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
         /* Paginación */
         .sweetbite-body .pagination {
             display: flex;
             justify-content: center;
             gap: 8px;
+            margin-top: 40px;
         }
 
         .sweetbite-body .page-btn {
@@ -768,7 +774,6 @@ function renderizar_landing_sweetbite() {
         }
 
         .sweetbite-body .testimonials h2 {
-            font-family: var(--font-heading);
             font-size: 32px;
             color: var(--primary-dark);
             margin-bottom: 40px;
@@ -825,7 +830,7 @@ function renderizar_landing_sweetbite() {
         }
 
         .sweetbite-body .newsletter-box h2 {
-            font-family: var(--font-heading);
+            margin-top: 0;
             font-size: 32px;
             margin-bottom: 12px;
         }
@@ -889,10 +894,10 @@ function renderizar_landing_sweetbite() {
         }
 
         .sweetbite-body .footer-brand h3 {
-            font-family: var(--font-heading);
             font-size: 20px;
             color: var(--primary-dark);
             margin-bottom: 12px;
+            margin-top: 0;
         }
 
         .sweetbite-body .footer-brand p {
@@ -903,6 +908,7 @@ function renderizar_landing_sweetbite() {
             color: var(--primary-dark);
             font-weight: 600;
             margin-bottom: 16px;
+            margin-top: 0;
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -960,6 +966,7 @@ function renderizar_landing_sweetbite() {
             </div>
         </header>
 
+        <!-- SECCIÓN HERO -->
         <section class="hero">
             <div class="container hero-grid">
                 <div class="hero-content">
@@ -973,6 +980,7 @@ function renderizar_landing_sweetbite() {
             </div>
         </section>
 
+        <!-- BEST SELLERS -->
         <section class="best-sellers">
             <div class="container">
                 <div class="section-header">
@@ -985,50 +993,45 @@ function renderizar_landing_sweetbite() {
 
                 <div class="product-grid-3">
                     <div class="product-card">
-                        <div>
-                            <div class="product-img-wrapper">
-                                <img src="https://images.unsplash.com/photo-1558961317-1943cbd213be?auto=format&fit=crop&w=600&q=80" alt="Classic Choc">
-                            </div>
-                            <div class="product-info-meta">
-                                <h3 class="product-title">Classic Choc</h3>
-                                <span class="product-price">$3.50</span>
-                            </div>
-                            <p class="product-desc">Nuestra receta original con chips de chocolate 70% cacao.</p>
+                        <div class="product-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1558961317-1943cbd213be?auto=format&fit=crop&w=600&q=80" alt="Classic Choc">
                         </div>
+                        <div class="product-info-meta">
+                            <h3 class="product-title">Classic Choc</h3>
+                            <span class="product-price">$3.50</span>
+                        </div>
+                        <p class="product-desc">Nuestra receta original con chips de chocolate 70% cacao.</p>
                         <button class="btn-quick-add" onclick="addToCart('Classic Choc')"><i class="fa-solid fa-plus"></i> Quick Add</button>
                     </div>
 
                     <div class="product-card">
-                        <div>
-                            <div class="product-img-wrapper">
-                                <img src="https://images.unsplash.com/photo-1618923850107-d1a234d7a73a?auto=format&fit=crop&w=600&q=80" alt="Velvet Red">
-                            </div>
-                            <div class="product-info-meta">
-                                <h3 class="product-title">Velvet Red</h3>
-                                <span class="product-price">$3.75</span>
-                            </div>
-                            <p class="product-desc">Suave como el terciopelo con notas de cacao y chocolate blanco.</p>
+                        <div class="product-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1618923850107-d1a234d7a73a?auto=format&fit=crop&w=600&q=80" alt="Velvet Red">
                         </div>
+                        <div class="product-info-meta">
+                            <h3 class="product-title">Velvet Red</h3>
+                            <span class="product-price">$3.75</span>
+                        </div>
+                        <p class="product-desc">Suave como el terciopelo con notas de cacao y chocolate blanco.</p>
                         <button class="btn-quick-add" onclick="addToCart('Velvet Red')"><i class="fa-solid fa-plus"></i> Quick Add</button>
                     </div>
 
                     <div class="product-card">
-                        <div>
-                            <div class="product-img-wrapper">
-                                <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=600&q=80" alt="Salted Caramel">
-                            </div>
-                            <div class="product-info-meta">
-                                <h3 class="product-title">Salted Caramel</h3>
-                                <span class="product-price">$3.95</span>
-                            </div>
-                            <p class="product-desc">Caramelo artesanal y un toque de sal marina de la costa.</p>
+                        <div class="product-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=600&q=80" alt="Salted Caramel">
                         </div>
+                        <div class="product-info-meta">
+                            <h3 class="product-title">Salted Caramel</h3>
+                            <span class="product-price">$3.95</span>
+                        </div>
+                        <p class="product-desc">Caramelo artesanal y un toque de sal marina de la costa.</p>
                         <button class="btn-quick-add" onclick="addToCart('Salted Caramel')"><i class="fa-solid fa-plus"></i> Quick Add</button>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- NUESTRA CALIDAD -->
         <section class="quality" id="quality">
             <div class="container quality-grid">
                 <div class="quality-images">
@@ -1048,6 +1051,7 @@ function renderizar_landing_sweetbite() {
             </div>
         </section>
 
+        <!-- CATALOGO COMPLETO -->
         <section class="collection-section" id="catalog">
             <div class="container">
                 <div class="collection-intro">
@@ -1074,111 +1078,56 @@ function renderizar_landing_sweetbite() {
                 </div>
 
                 <div class="product-grid-catalog" id="catalog-grid">
-                    
+                    <!-- Producto 1 -->
                     <div class="product-card" data-category="clasicas">
-                        <div>
-                            <div class="product-img-wrapper">
-                                <span class="badge pink">Top Seller</span>
-                                <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
-                                <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=600&q=80" alt="Sea Salt Dark Chocolate">
-                            </div>
-                            <div class="product-unit">Per Dozen</div>
-                            <div class="product-info-meta">
-                                <h3 class="product-title">Sea Salt Dark Chocolate</h3>
-                                <span class="product-price">$32.00</span>
-                            </div>
-                            <p class="product-desc">Our signature classic dough infused with 70% cacao Belgian chocolate chunks and Malton sea salt.</p>
+                        <div class="product-img-wrapper">
+                            <span class="badge pink">Top Seller</span>
+                            <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+                            <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=600&q=80" alt="Sea Salt Dark Chocolate">
                         </div>
+                        <div class="product-unit">Per Dozen</div>
+                        <div class="product-info-meta">
+                            <h3 class="product-title">Sea Salt Dark Chocolate</h3>
+                            <span class="product-price">$32.00</span>
+                        </div>
+                        <p class="product-desc">Our signature classic dough infused with 70% cacao Belgian chocolate chunks and Malton sea salt.</p>
                         <button class="btn-quick-add" onclick="addToCart('Sea Salt Dark Chocolate')">Add to Box</button>
                     </div>
 
+                    <!-- Producto 2 -->
                     <div class="product-card" data-category="clasicas">
-                        <div>
-                            <div class="product-img-wrapper">
-                                <span class="badge">New Arrival</span>
-                                <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
-                                <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=80" alt="Pistachio Dream">
-                            </div>
-                            <div class="product-unit">Per Dozen</div>
-                            <div class="product-info-meta">
-                                <h3 class="product-title">Pistachio Dream</h3>
-                                <span class="product-price">$36.00</span>
-                            </div>
-                            <p class="product-desc">Toasted Iranian pistachios paired with velvet white chocolate and a hint of cardamom.</p>
+                        <div class="product-img-wrapper">
+                            <span class="badge">New Arrival</span>
+                            <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+                            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=80" alt="Pistachio Dream">
                         </div>
+                        <div class="product-unit">Per Dozen</div>
+                        <div class="product-info-meta">
+                            <h3 class="product-title">Pistachio Dream</h3>
+                            <span class="product-price">$36.00</span>
+                        </div>
+                        <p class="product-desc">Toasted Iranian pistachios paired with velvet white chocolate and a hint of cardamom.</p>
                         <button class="btn-quick-add" onclick="addToCart('Pistachio Dream')">Add to Box</button>
                     </div>
 
+                    <!-- Producto 3 -->
                     <div class="product-card" data-category="rellenas">
-                        <div>
-                            <div class="product-img-wrapper">
-                                <span class="badge pink">Rellenas</span>
-                                <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
-                                <img src="https://images.unsplash.com/photo-1618923850107-d1a234d7a73a?auto=format&fit=crop&w=600&q=80" alt="Red Velvet Lava">
-                            </div>
-                            <div class="product-unit">Per Dozen</div>
-                            <div class="product-info-meta">
-                                <h3 class="product-title">Red Velvet Lava</h3>
-                                <span class="product-price">$38.00</span>
-                            </div>
-                            <p class="product-desc">Deep cocoa red velvet dough stuffed with a tangy cream cheese frosting core.</p>
+                        <div class="product-img-wrapper">
+                            <span class="badge pink">Rellenas</span>
+                            <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+                            <img src="https://images.unsplash.com/photo-1618923850107-d1a234d7a73a?auto=format&fit=crop&w=600&q=80" alt="Red Velvet Lava">
                         </div>
+                        <div class="product-unit">Per Dozen</div>
+                        <div class="product-info-meta">
+                            <h3 class="product-title">Red Velvet Lava</h3>
+                            <span class="product-price">$38.00</span>
+                        </div>
+                        <p class="product-desc">Deep cocoa red velvet dough stuffed with a tangy cream cheese frosting core.</p>
                         <button class="btn-quick-add" onclick="addToCart('Red Velvet Lava')">Add to Box</button>
                     </div>
-
-                    <div class="product-card" data-category="veganas">
-                        <div>
-                            <div class="product-img-wrapper">
-                                <span class="badge green">Vegan Choice</span>
-                                <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
-                                <img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=600&q=80" alt="Midnight Cocoa">
-                            </div>
-                            <div class="product-unit">Per Dozen</div>
-                            <div class="product-info-meta">
-                                <h3 class="product-title">Midnight Cocoa</h3>
-                                <span class="product-price">$34.00</span>
-                            </div>
-                            <p class="product-desc">Plant-based perfection. Double cocoa base with dairy-free dark chocolate chips.</p>
-                        </div>
-                        <button class="btn-quick-add" onclick="addToCart('Midnight Cocoa')">Add to Box</button>
-                    </div>
-
-                    <div class="product-card" data-category="limitada">
-                        <div>
-                            <div class="product-img-wrapper">
-                                <span class="badge purple">Limited Edition</span>
-                                <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
-                                <img src="https://images.unsplash.com/photo-1530631673369-bc24f5803c5f?auto=format&fit=crop&w=600&q=80" alt="Summer Lemon Glaze">
-                            </div>
-                            <div class="product-unit">Per Dozen</div>
-                            <div class="product-info-meta">
-                                <h3 class="product-title">Summer Lemon Glaze</h3>
-                                <span class="product-price">$30.00</span>
-                            </div>
-                            <p class="product-desc">Zesty Sicilian lemon shortbread finished with a thin, crackly citrus glaze.</p>
-                        </div>
-                        <button class="btn-quick-add" onclick="addToCart('Summer Lemon Glaze')">Add to Box</button>
-                    </div>
-
-                    <div class="product-card" data-category="clasicas">
-                        <div>
-                            <div class="product-img-wrapper">
-                                <span class="badge">Clásicas</span>
-                                <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
-                                <img src="https://images.unsplash.com/photo-1600431521340-491eca880813?auto=format&fit=crop&w=600&q=80" alt="Spiced Oatmeal Raisin">
-                            </div>
-                            <div class="product-unit">Per Dozen</div>
-                            <div class="product-info-meta">
-                                <h3 class="product-title">Spiced Oatmeal Raisin</h3>
-                                <span class="product-price">$28.00</span>
-                            </div>
-                            <p class="product-desc">Old-fashioned rolled oats, jumbo flame raisins, and a warming blend of spices.</p>
-                        </div>
-                        <button class="btn-quick-add" onclick="addToCart('Spiced Oatmeal Raisin')">Add to Box</button>
-                    </div>
-
                 </div>
 
+                <!-- Paginación -->
                 <div class="pagination">
                     <button class="page-btn active">1</button>
                     <button class="page-btn">2</button>
@@ -1188,110 +1137,83 @@ function renderizar_landing_sweetbite() {
             </div>
         </section>
 
+        <!-- TESTIMONIOS -->
         <section class="testimonials">
             <div class="container">
                 <h2>Lo que dicen nuestros SweetLovers</h2>
                 <div class="testimonial-grid">
                     <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
                         <p class="testimonial-text">"Las mejores galletas que he probado en mi vida. La de Salted Caramel es simplemente de otro mundo."</p>
-                        <div class="testimonial-author">— María G.</div>
+                        <span class="testimonial-author">— María G.</span>
                     </div>
                     <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
                         <p class="testimonial-text">"El regalo perfecto. El packaging es tan cuidado como el sabor. ¡Repetiré seguro!"</p>
-                        <div class="testimonial-author">— Carlos R.</div>
+                        <span class="testimonial-author">— Carlos R.</span>
                     </div>
                     <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
                         <p class="testimonial-text">"Se nota que usan ingredientes de verdad. Me encanta que apoyen a los productores locales."</p>
-                        <div class="testimonial-author">— Elena M.</div>
+                        <span class="testimonial-author">— Elena M.</span>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- NEWSLETTER -->
         <section class="newsletter-section" id="newsletter">
             <div class="container">
                 <div class="newsletter-box">
                     <h2>¿Quieres un bocado gratis?</h2>
                     <p>Suscríbete a nuestra newsletter y recibe un 10% de descuento en tu primer pedido y noticias sobre nuevos sabores exclusivos.</p>
-                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!');">
-                        <input type="email" placeholder="Tu correo electrónico" required>
+                    <form class="newsletter-form" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Tu correo electrónico">
                         <button type="submit">Suscribirme</button>
                     </form>
                 </div>
             </div>
         </section>
 
+        <!-- FOOTER -->
         <footer>
             <div class="container footer-grid">
                 <div class="footer-brand">
                     <h3>SweetBite</h3>
-                    <p>© 2024 SweetBite Artisanal Cookies. Handcrafted with care using only the finest local ingredients.</p>
+                    <p>© 2026 SweetBite Artisanal Cookies. Handcrafted with care using only the finest local ingredients.</p>
                 </div>
                 <div class="footer-column">
                     <h4>Explore</h4>
                     <ul>
                         <li><a href="#newsletter">Newsletter</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#quality">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Support</h4>
+                    <h4>Help</h4>
                     <ul>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Shipping Info</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Stay Connected</h4>
+                    <h4>Social</h4>
                     <div class="footer-social-icons">
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-facebook"></i>
                     </div>
                 </div>
             </div>
-            <div class="container footer-bottom">
-                <p>Designed to be clean, scannable, and delicious.</p>
-            </div>
         </footer>
     </div>
-
-    <script>
-        function filterCategory(category, button) {
-            const tags = document.querySelectorAll('.sweetbite-body .tag');
-            tags.forEach(tag => tag.classList.remove('active'));
-            button.classList.add('active');
-
-            const products = document.querySelectorAll('.sweetbite-body #catalog-grid .product-card');
-            products.forEach(product => {
-                if (category === 'all' || product.getAttribute('data-category') === category) {
-                    product.style.display = 'flex';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
-        }
-
-        function addToCart(productName) {
-            alert(`¡"${productName}" se ha añadido de manera simulada a tu caja con éxito!`);
-        }
-
-        document.querySelectorAll('.sweetbite-body .heart-icon').forEach(heart => {
-            heart.addEventListener('click', function() {
-                const icon = this.querySelector('i');
-                if(icon.classList.contains('fa-regular')) {
-                    icon.classList.replace('fa-regular', 'fa-solid');
-                    icon.style.color = '#731A24';
-                } else {
-                    icon.classList.replace('fa-solid', 'fa-regular');
-                    icon.style.color = '#6E6661';
-                }
-            });
-        });
-    </script>
     <?php
     return ob_get_clean();
 }
+// Registro oficial del shortcode en WordPress
 add_shortcode('mi_landing_completa', 'renderizar_landing_sweetbite');
